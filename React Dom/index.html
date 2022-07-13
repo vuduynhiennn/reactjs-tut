@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Dom</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script>
+        /*
+        <div class="post-item"> 
+            <h2 title="Học react tại F8"> học Reactjs </h2>
+            <p>Học reactjs từ cơ bản tới nâng cao </p>
+        </div>
+        */
+        const postItem = React.createElement(
+            'div',
+            {className: 'post-item'},
+            React.createElement(
+                'h2',
+                {title: 'Học react tại f8'},
+                'Học reactjs'),
+            React.createElement(
+                'p',
+                null,
+                'Học react từ cơ bản tới nâng cao'
+            )
+        )
+
+        const ctn = document.getElementById('root');
+
+        // ReactDOM.render(postItem, root)
+
+        // REACT 18
+        const root = ReactDOM.createRoot(ctn)
+        root.render(postItem);
+
+    </script>
+
+</body>
+
+</html>
