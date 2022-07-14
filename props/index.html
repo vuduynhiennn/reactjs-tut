@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=;, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="app"> </div>
+
+    <script type="text/babel">
+
+        function YourEmail() {
+            return (
+                <div className="form">
+                     <label htmlFor="email">Type your email:</label>
+                    <input id="email" />
+                </div>
+            )
+        }
+        // props
+        function Header(props) {
+            console.log(props)
+            return (
+                <div className= {props.className} title={props.title}> hello this is a heading file </div>
+            )
+        }
+
+        class Content extends React.Component {
+            render() {
+                return (
+                    // jsx code 
+                    <div className='secondDiv'> hello</div>
+                )
+            }
+        }
+        //props
+        const app = (
+            <div className="wrraper">
+                <Header title="con cac2" className="daubuoi"/>
+                <Header title="con cac2" className="daucac"/>
+                <YourEmail />
+                <Content />
+            </div>
+        )
+
+        ReactDOM.createRoot(document.getElementById('app')).render(app)
+        
+    </script>
+</body>
+</html>
